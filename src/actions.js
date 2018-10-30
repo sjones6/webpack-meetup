@@ -1,6 +1,11 @@
 import makeColorString from './make_color_string.js'
 
 export default {
+  getState() {
+    return function(state) {
+      return state
+    }
+  },
   setColor() {
     return function() {
       return { color: makeColorString() }

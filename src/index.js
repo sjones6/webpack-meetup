@@ -5,3 +5,9 @@ import view from './view.js'
 import state from './state.js'
 
 app(state, actions, view, document.body)
+
+if (module.hot) {
+  module.hot.accept(function() {
+    app(actions.getState(), actions, view, document.body)
+  })
+}
