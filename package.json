@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "webpack --mode development --watch --colors --progress",
+    "dev": "webpack --config=./webpack.conf.js --watch --progress",
     "prod": "webpack --mode production"
   },
   "repository": {
@@ -20,7 +20,14 @@
   "homepage": "https://github.com/sjones6/webpack-meetup#readme",
   "dependencies": {
     "hyperapp": "^1.2.9",
-    "webpack": "^4.23.1",
     "webpack-cli": "^3.1.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-transform-react-jsx": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-loader": "^8.0.4",
+    "webpack": "^4.23.1",
+    "webpack-merge": "^4.1.4"
   }
 }

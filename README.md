@@ -8,3 +8,4 @@
 
 `pre-webpack`
 `wp-step-1`
+`wp-step-2`

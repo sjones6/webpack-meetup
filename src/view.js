@@ -1,17 +1,6 @@
-import {
-  div,
-  h1,
-  span,
-  button
-} from './dom.js'
-
-export default (state, actions) => div({}, [
-  h1({
-    id: 'title',
-    style: 'color: ' + state.color 
-  }, [
-    'Yay, Hyperapp! ',
-    span({ }, [state.color])
-  ]),
-  button({onclick: state.interval ? actions.stopCyclingColors : actions.startCyclingColors}, [state.interval ? 'stop ' : 'start', ' cycling colors'])
-])
+export default (state, actions) => (
+  <div>
+    <h1 id="title" style={`color: ` + state.color }>Yay, Hyperapp and JSX! <span>{state.color}</span></h1>
+    <button onclick={state.interval ? actions.stopCyclingColors : actions.startCyclingColors}>{state.interval ? 'stop ' : 'start'} cycling colors</button>
+  </div>
+)
