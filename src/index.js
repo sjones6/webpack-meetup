@@ -1,3 +1,4 @@
+import './app.css'
 import { app } from 'hyperapp'
 import actions from './actions.js'
 import view from './view.js'

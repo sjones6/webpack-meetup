@@ -1,8 +1,8 @@
 const { ProvidePlugin } = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  mode: 'development',
-
+  entry: './src/index.js',
   module: {
     rules: [
       {
@@ -15,6 +15,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new HtmlWebpackPlugin(),
     new ProvidePlugin({
       'h': ['hyperapp', 'h']
     })
