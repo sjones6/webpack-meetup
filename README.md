@@ -6,6 +6,7 @@
 
 # Relevant Tags
 
-`pre-webpack`
-`wp-step-1`
-`wp-step-2`
+`pre-webpack`: No module loader
+`wp-step-1`: Zero configuration webpack with hyperapp framework
+`wp-step-2`: Advanced modularization webpack (splitting things out)
+`wp-step-2`: First config including Babel and JSX (get them pretty templates)
