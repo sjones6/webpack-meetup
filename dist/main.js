@@ -98,6 +98,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./src/actions.js":
+/*!************************!*\
+  !*** ./src/actions.js ***!
+  \************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _make_color_string_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./make_color_string.js */ \"./src/make_color_string.js\");\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  setColor() {\n    return function() {\n      return { color: Object(_make_color_string_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])() }\n    }\n  },\n  startCyclingColors() {\n    return function(state, actions) {\n      return {\n        interval: setInterval(actions.setColor, 500)\n      }\n    }\n  },\n  stopCyclingColors() {\n    return function(state, actions) {\n      state.interval && clearInterval(state.interval)\n      return { interval: null }\n    }\n  }\n});\n\n//# sourceURL=webpack:///./src/actions.js?");
+
+/***/ }),
+
 /***/ "./src/dom.js":
 /*!********************!*\
   !*** ./src/dom.js ***!
@@ -118,7 +130,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var hyperapp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! hyperapp */ \"./node_modules/hyperapp/src/index.js\");\n/* harmony import */ var _make_color_string_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./make_color_string.js */ \"./src/make_color_string.js\");\n/* harmony import */ var _dom_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dom.js */ \"./src/dom.js\");\n\n\n\n\nconst state = {\n  color: 'rgb(0,0,0)',\n  interval: null\n}\n\nconst actions = {\n  setColor() {\n    return function() {\n      return { color: Object(_make_color_string_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])() }\n    }\n  },\n  cycleColors() {\n    return function(state, actions) {\n      if (state.interval) {\n        clearInterval(state.interval)\n        return { interval: null }\n      }\n      return {\n        interval: setInterval(actions.setColor, 500)\n      }\n    }\n  }\n}\n\nconst view = (state, actions) => {\n  return Object(_dom_js__WEBPACK_IMPORTED_MODULE_2__[\"div\"])({}, [\n    Object(_dom_js__WEBPACK_IMPORTED_MODULE_2__[\"h1\"])({\n      id: 'title',\n      style: 'color: ' + state.color \n    }, [\n      'Yay, Hyperapp! ',\n      Object(_dom_js__WEBPACK_IMPORTED_MODULE_2__[\"span\"])({ }, [state.color])\n    ]),\n    Object(_dom_js__WEBPACK_IMPORTED_MODULE_2__[\"button\"])({onclick: actions.cycleColors}, ['cycle colors'])\n  ])\n}\n\nObject(hyperapp__WEBPACK_IMPORTED_MODULE_0__[\"app\"])(state, actions, view, document.body)\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var hyperapp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! hyperapp */ \"./node_modules/hyperapp/src/index.js\");\n/* harmony import */ var _actions_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./actions.js */ \"./src/actions.js\");\n/* harmony import */ var _view_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./view.js */ \"./src/view.js\");\n/* harmony import */ var _state_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./state.js */ \"./src/state.js\");\n\n\n\n\n\nObject(hyperapp__WEBPACK_IMPORTED_MODULE_0__[\"app\"])(_state_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"], _actions_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"], _view_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"], document.body)\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -131,6 +143,30 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var hype
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\nfunction getRandom() {\n  return Math.floor((Math.random() * 255))\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (function() {\n  return 'rgb(' + [\n    getRandom(),\n    getRandom(),\n    getRandom()\n  ].join(', ') + ')'\n});\n\n//# sourceURL=webpack:///./src/make_color_string.js?");
+
+/***/ }),
+
+/***/ "./src/state.js":
+/*!**********************!*\
+  !*** ./src/state.js ***!
+  \**********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  color: 'rgb(0,0,0)',\n  interval: null\n});\n\n//# sourceURL=webpack:///./src/state.js?");
+
+/***/ }),
+
+/***/ "./src/view.js":
+/*!*********************!*\
+  !*** ./src/view.js ***!
+  \*********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dom_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom.js */ \"./src/dom.js\");\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ((state, actions) => Object(_dom_js__WEBPACK_IMPORTED_MODULE_0__[\"div\"])({}, [\n  Object(_dom_js__WEBPACK_IMPORTED_MODULE_0__[\"h1\"])({\n    id: 'title',\n    style: 'color: ' + state.color \n  }, [\n    'Yay, Hyperapp! ',\n    Object(_dom_js__WEBPACK_IMPORTED_MODULE_0__[\"span\"])({ }, [state.color])\n  ]),\n  Object(_dom_js__WEBPACK_IMPORTED_MODULE_0__[\"button\"])({onclick: state.interval ? actions.stopCyclingColors : actions.startCyclingColors}, [state.interval ? 'stop ' : 'start', ' cycling colors'])\n]));\n\n//# sourceURL=webpack:///./src/view.js?");
 
 /***/ })
 
