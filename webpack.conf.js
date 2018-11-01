@@ -3,6 +3,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: './src/index.js',
+  resolve: {
+    alias: {
+      lodash: require.resolve('lodash-es')
+    }
+  },
   module: {
     rules: [
       {
@@ -13,6 +18,18 @@ module.exports = {
         }
       }
     ]
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'async',
+      minSize: 0,
+      maxSize: 0,
+      minChunks: 1,
+      maxAsyncRequests: 5,
+      maxInitialRequests: 3,
+      automaticNameDelimiter: '~',
+      name: true
+    }
   },
   plugins: [
     new HtmlWebpackPlugin(),

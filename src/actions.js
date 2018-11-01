@@ -6,6 +6,11 @@ export default {
       return state
     }
   },
+  loaded() {
+    return function() {
+      return { loaded: true }
+    }
+  },
   setColor() {
     return function() {
       return { color: makeColorString() }

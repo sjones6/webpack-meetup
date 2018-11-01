@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{5:function(a,n,o){"use strict";o.r(n);var c=o(11),e=o(2);n.default=function(){alert(Object(c.a)(e.a,"color")),alert("Dynamically loaded!!")}}}]);

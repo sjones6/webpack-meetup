@@ -13,6 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/sjones6/webpack-meetup.git"
   },
+  "sideEffects": false,
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -23,10 +24,12 @@
   "dependencies": {
     "css-loader": "^1.0.1",
     "hyperapp": "^1.2.9",
+    "lodash-es": "^4.17.11",
     "webpack-cli": "^3.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-transform-react-jsx": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "babel-loader": "^8.0.4",

@@ -1,6 +1,11 @@
+
+const dynamicImport = function() {
+  return import('./dynamically_loaded.js')
+    .then(({ default: x }) => x())
+} 
+
 export default (state, actions) => (
   <div>
-    <h1 id="title" style={`color: ` + state.color }>Yay, Hyperapp and JSX! <span>{state.color}</span></h1>
-    <button onclick={state.interval ? actions.stopCyclingColors : actions.startCyclingColors}>{state.interval ? 'stop ' : 'start'} cycling colors</button>
+    <button onclick={dynamicImport}>Load another file.</button>
   </div>
 )
