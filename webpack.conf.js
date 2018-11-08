@@ -3,11 +3,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: './src/index.js',
-  resolve: {
-    alias: {
-      lodash: require.resolve('lodash-es')
-    }
-  },
+  // resolve: {
+  //   alias: {
+  //     lodash: require.resolve('lodash-es')
+  //   }
+  // },
   module: {
     rules: [
       {
